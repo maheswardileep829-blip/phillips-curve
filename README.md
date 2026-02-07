@@ -1,49 +1,31 @@
-Title: Phillips Curve: Unemployment vs Inflation (U.S., monthly)
+# Phillips Curve: Unemployment vs Inflation (U.S.)
 
-What this does
+This project analyzes the relationship between unemployment and inflation in the United States using real data from the Federal Reserve (FRED). It visualizes the **Phillips Curve**, a key concept in macroeconomics.
 
-Downloads U.S. unemployment rate (UNRATE) and CPI (CPIAUCSL) from FRED
+---
 
-Computes monthly inflation from CPI percent change
+## Project Overview
+The script:
 
-Plots the Phillips Curve scatter plot
+- Downloads U.S. unemployment data (UNRATE)
+- Downloads Consumer Price Index data (CPIAUCSL)
+- Calculates monthly inflation
+- Plots unemployment vs. inflation as a scatter plot
 
-Data Sources
+This allows us to visually examine whether a relationship exists between the two variables.
 
-FRED UNRATE (Unemployment Rate)
+---
 
-FRED CPIAUCSL (Consumer Price Index)
+## Data Sources
+Data is pulled directly from the Federal Reserve Economic Data (FRED) database:
 
-How to run
+- **UNRATE**: U.S. Unemployment Rate
+- **CPIAUCSL**: Consumer Price Index (All Urban Consumers)
 
+---
+
+## How to Run
+
+### 1. Install dependencies
+```bash
 py -3 -m pip install -r requirements.txt
-py -3 phillips_curve.py
-
-
-Method
-
-Merge datasets by date
-
-Compute inflation = pct_change(CPI) * 100
-
-Scatter: Unemployment (x) vs Inflation (y)
-
-Results (what you observed)
-
-The relationship looks weak overall across 1948–present (scatter cloud, not a clear slope)
-
-Limitations
-
-Monthly inflation is noisy
-
-Relationship changes across decades (might be stronger in some eras)
-
-CPI percent change month-to-month isn’t the same as year-over-year inflation
-
-Next improvements
-
-Try year-over-year inflation instead of month-to-month
-
-Split by time periods (ex: 1948–1980 vs 1981–present)
-
-Fit a regression line + report correlation
